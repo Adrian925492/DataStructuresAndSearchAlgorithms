@@ -1,25 +1,34 @@
+# Toolchain paths and names:
+
 CXX = g++
 CC = gcc
 
+
+#Output directory name
 OUTPUTDIR := Output
 
+#Output filename
 OUTPUT := DataStructures
 
+#Source list
 SOURCES:= \
 main.cpp \
 
-
+#Include list
 INCLUDES := \
 
+#Global defines
 DEFINES := \
 
-
+#Compiler settings
 CXX_FLAGS := \
 -std=c++11 \
 -g \
 
+#Linker settings
 LDFLAGS := \
 
+################################################################################################################
 OBJFILES = $(addprefix $(OUTPUTDIR)/, $(notdir $(SOURCES:.cpp=.o)))
 TARGET = $(OUTPUTDIR)/$(OUTPUT).exe
 
@@ -36,6 +45,9 @@ clean:
 ifneq ($(wildcard $(OUTPUTDIR)/.*),)
 	rmdir $(subst /, \\, $(OUTPUTDIR)) /s /q
 endif
+
+run:
+	$(TARGET)
 
 $(OUTPUTDIR):
 	mkdir $@
