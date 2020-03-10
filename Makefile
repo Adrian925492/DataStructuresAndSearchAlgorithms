@@ -1,5 +1,4 @@
 # Toolchain paths and names:
-
 CXX = g++
 CC = gcc
 
