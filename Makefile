@@ -3,3 +3,4 @@ CC = gcc
 
 all:
 	$(CXX) main.cpp -o main.exe
+	
