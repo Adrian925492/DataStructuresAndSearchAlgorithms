@@ -20,8 +20,6 @@ CXX_FLAGS := \
 
 LDFLAGS := \
 
-
-
 OBJFILES = $(addprefix $(OUTPUTDIR)/, $(notdir $(SOURCES:.cpp=.o)))
 TARGET = $(OUTPUTDIR)/$(OUTPUT).exe
 
