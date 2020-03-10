@@ -39,5 +39,23 @@
                 "showReuseMessage": false
            }
         },
+        {
+            "type": "shell",
+            "label": "run",
+            "command": "C:\\ProgramowanieToolchain\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\mingw32-make.exe",
+            "args": [
+                "run"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false
+           }
+        },
     ]
 }
