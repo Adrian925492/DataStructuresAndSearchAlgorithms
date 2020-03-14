@@ -74,7 +74,31 @@ public:
     }
     void remove(uint32_t id)
     {
-        
+        if (id > _length)
+        {
+            return;     //Check if id is in bounds
+        }
+
+        T* oldArray = _elements;    //Copy elements
+
+        _elements = new T[_length - 1];     //Allocate space
+
+        //Copy elements
+        for (uint32_t i = 0, j = 0; i < _length - 1; ++i, ++j)
+        {
+            if (id == j)
+            {
+                ++j;
+            }
+                _elements[i] = oldArray[j];          
+        }
+
+        if (_length > 0)
+        {
+            delete [] oldArray;     //Deallocate space
+        }
+
+        _length--;
     }
 
 private:

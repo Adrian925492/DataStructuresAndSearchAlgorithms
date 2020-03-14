@@ -36,3 +36,21 @@ TEST(SimpleListTest, SearchingElementInList)
     EXPECT_EQ(oList.search('A'), 0);
     EXPECT_EQ(oList.search('D'), 3);    
 }
+
+TEST(SimpleListTest, RemoveElementTest)
+{
+    /* GIVEN */
+    SimpleList_t<char> oList;
+
+    /* WHEN */
+    oList.insert('A', 0);
+    oList.insert('B', 1);
+    oList.insert('C', 2);
+    oList.insert('D', 3); 
+    oList.remove(1);
+
+    /*THEN */
+    EXPECT_EQ(oList.search('A'), 0);
+    EXPECT_EQ(oList.search('C'), 1);      
+    EXPECT_EQ(oList.search('D'), 2);     
+}
