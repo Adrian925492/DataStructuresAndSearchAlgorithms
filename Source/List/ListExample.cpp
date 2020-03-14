@@ -12,6 +12,4 @@ void listExample(void)
 
     SimpleList_t<unsigned char> simpleList;
 
-
-
 }
