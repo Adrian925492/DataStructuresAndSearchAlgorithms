@@ -5,16 +5,21 @@ CXXFLAGS = -std=gnu++11 -Wall
 INCLUDES = \
 -IFramework/googletest-master/googletest/ \
 -IFramework/googletest-master/googletest/include \
+-IFramework/googletest-master/googlemock/ \
+-IFramework/googletest-master/googlemock/include \
 
 LDFLAGS = 
 
-TESTSOURCES_DIR = Framework/googletest-master/googletest/src
+GTEST_DIR = Framework/googletest-master/googletest/src
+GMOCK_DIR = Framework/googletest-master/googlemock/src
 
 TESTSOURCES = \
-$(TESTSOURCES_DIR)/gtest-all.cc \
-$(TESTSOURCES_DIR)/gtest_main.cc \
+$(GTEST_DIR)/gtest-all.cc \
+$(GMOCK_DIR)/gmock-all.cc \
+$(GTEST_DIR)/gtest_main.cc \
 
 SOURCES = \
+Source/List/SimpleListTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -27,16 +32,18 @@ OBJECTS = \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cpp=.o)))) \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cc=.o))))
 
+vpath %.cc Source/List Source $(GTEST_DIR) $(GMOCK_DIR)
+
 all: $(OUTPUT_DIR) $(NAME)
 	@echo $(OBJECTS)
 
 $(NAME): $(OBJECTS)
 	$(CXX) -o $(OUTPUT_DIR)/$(NAME).exe $(OBJECTS)
 
-$(OBJ_DIR)/%.o: Test/%.cpp
+$(OBJ_DIR)/%.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $< -o $@
 
-$(OBJ_DIR)/%.o: $(TESTSOURCES_DIR)/%.cc
+$(OBJ_DIR)/%.o: %.cc
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $< -o $@
 
 $(OUTPUT_DIR):
