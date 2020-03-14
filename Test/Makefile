@@ -21,6 +21,7 @@ $(GTEST_DIR)/gtest_main.cc \
 SOURCES = \
 Source/List/SimpleListTest.cc \
 Source/List/ForwardListTest.cc \
+Source/List/ListTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
