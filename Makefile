@@ -12,6 +12,7 @@ OUTPUT := DataStructures
 #Source list
 SOURCES:= \
 main.cpp \
+Source/List/ListExample.cpp \
 
 #Include list
 INCLUDES := \
@@ -31,6 +32,7 @@ LDFLAGS := \
 OBJFILES = $(addprefix $(OUTPUTDIR)/, $(notdir $(SOURCES:.cpp=.o)))
 TARGET = $(OUTPUTDIR)/$(OUTPUT).exe
 
+vpath %.cpp Souce Source/List
 
 all: $(OUTPUTDIR) $(TARGET)
 
