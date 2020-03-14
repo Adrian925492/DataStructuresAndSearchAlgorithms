@@ -27,5 +27,8 @@
     "gtest-adapter.debugConfig": [
         "UT Launch"
     ],
-    "gtest-adapter.supportLocation": true
+    "gtest-adapter.supportLocation": true,
+    "files.associations": {
+        "string_view": "cpp"
+    }
 }

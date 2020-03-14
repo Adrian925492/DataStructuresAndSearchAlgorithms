@@ -61,7 +61,8 @@ public:
 
         _length++;                  //Increment list size
     }
-    int search(T element)
+    
+    uint32_t search(T element)
     {
         for(uint32_t i = 0; i < _length; ++i)
         {
@@ -70,7 +71,7 @@ public:
                 return i;
             }
         }
-        return NULL;
+        return (T)NULL;
     }
     void remove(uint32_t id)
     {
@@ -99,6 +100,11 @@ public:
         }
 
         _length--;
+    }
+
+    uint32_t length()
+    {
+        return _length;
     }
 
 private:

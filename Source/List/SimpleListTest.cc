@@ -3,6 +3,17 @@
 
 #include "SimpleList.hpp"
 
+TEST(SimpleListTest, InitTest)
+{
+   /* GIVEN */
+    SimpleList_t<char> oList;
+
+   /* WHEN */
+
+   /* THEN */
+   EXPECT_EQ(oList.length(), 0u);
+}
+
 TEST(SimpleListTest, GetElementTest)
 {
     /* GIVEN */
@@ -33,8 +44,8 @@ TEST(SimpleListTest, SearchingElementInList)
     oList.insert('D', 3);
 
     /*THEN */
-    EXPECT_EQ(oList.search('A'), 0);
-    EXPECT_EQ(oList.search('D'), 3);    
+    EXPECT_EQ(oList.search('A'), 0u);
+    EXPECT_EQ(oList.search('D'), 3u);    
 }
 
 TEST(SimpleListTest, RemoveElementTest)
@@ -50,7 +61,7 @@ TEST(SimpleListTest, RemoveElementTest)
     oList.remove(1);
 
     /*THEN */
-    EXPECT_EQ(oList.search('A'), 0);
-    EXPECT_EQ(oList.search('C'), 1);      
-    EXPECT_EQ(oList.search('D'), 2);     
+    EXPECT_EQ(oList.search('A'), 0u);
+    EXPECT_EQ(oList.search('C'), 1u);      
+    EXPECT_EQ(oList.search('D'), 2u);     
 }
