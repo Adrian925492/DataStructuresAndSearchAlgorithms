@@ -22,6 +22,7 @@ SOURCES = \
 Source/List/SimpleListTest.cc \
 Source/List/ForwardListTest.cc \
 Source/List/ListTest.cc \
+Source/Stack/StackTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -34,7 +35,7 @@ OBJECTS = \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cpp=.o)))) \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cc=.o))))
 
-vpath %.cc Source/List Source $(GTEST_DIR) $(GMOCK_DIR)
+vpath %.cc Source/List Source/Stack Source $(GTEST_DIR) $(GMOCK_DIR)
 
 all: $(OUTPUT_DIR) $(NAME)
 	@echo $(OBJECTS)
