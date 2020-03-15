@@ -24,6 +24,7 @@ Source/List/ForwardListTest.cc \
 Source/List/ListTest.cc \
 Source/Stack/StackTest.cc \
 Source/Queue/SingleSideQueueTest.cc \
+Source/Queue/DoubleSideQueueTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
