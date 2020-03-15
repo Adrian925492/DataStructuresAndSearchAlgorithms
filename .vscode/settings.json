@@ -23,5 +23,12 @@
     },
     "c-cpp-flylint.cppcheck.executable": "C:/ProgramowanieToolchain/CppCheck/cppcheck",
     "c-cpp-flylint.flexelint.enable": false,
-    "c-cpp-flylint.clang.enable": false
+    "c-cpp-flylint.clang.enable": false,
+    "gtest-adapter.debugConfig": [
+        "UT Launch"
+    ],
+    "gtest-adapter.supportLocation": true,
+    "files.associations": {
+        "string_view": "cpp"
+    }
 }

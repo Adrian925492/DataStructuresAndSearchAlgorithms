@@ -1,20 +1,11 @@
 #include <iostream>
 
+#include "Source/List/ListExample.hpp"
+
 int main(void)
 {
     std::cout << "Algorithms and Data structures" << std::endl << std::endl;
-    
-    int i = 0;
 
-    while (i<5)
-    {
-        i++;
-    
-    }
+    listExample();  
 
-    while (i<5)
-    {
-        i++;
-    
-    }
 }
