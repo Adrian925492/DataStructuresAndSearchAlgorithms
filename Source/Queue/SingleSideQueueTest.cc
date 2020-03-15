@@ -3,7 +3,16 @@
 
 #include "SingleSideQueue.hpp"
 
+using namespace singleSideQueue;
+
 TEST(SingleSideQueueTest, IntiTest)
 {
-    EXPECT_TRUE(false);
+    /* GIVEN */
+    Queue<uint16_t> oQueue;
+
+    /* WHEN */
+
+    /* THEN */
+    EXPECT_TRUE(oQueue.isEmpty());
+    EXPECT_EQ(oQueue.front(), NULL);
 }
