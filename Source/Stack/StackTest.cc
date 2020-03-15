@@ -3,7 +3,29 @@
 
 #include "Stack.hpp"
 
+using namespace stack;
+
 TEST(StackTest, InitTest)
 {
-    EXPECT_TRUE(false);
+    /* GIVEN */
+    Stack<uint16_t> oStack;
+
+    /* WHEN */
+
+    /* THEN */
+    EXPECT_EQ(oStack.isEmpty(), true);
+    EXPECT_EQ(oStack.getTop(), NULL);
+}
+
+TEST(StackTest, PushTest)
+{
+    /* GIVEN */
+    Stack<uint16_t> oStack;
+
+    /* WHEN */
+    oStack.push(1);
+
+    /* THEN */
+    EXPECT_EQ(oStack.isEmpty(), false);
+    EXPECT_EQ(oStack.getTop(), 1u);
 }
