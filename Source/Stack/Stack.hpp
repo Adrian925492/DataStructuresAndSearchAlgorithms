@@ -9,10 +9,11 @@ template <typename T>
 class Node
 {
 public:
-    Node(): value(NULL), next(nullptr) {}
+    Node(): value(NULL), previous(nullptr) {}
+    Node(T element): value(element), previous(nullptr) {}
     ~Node(){}
     T value;
-    Node<T>* next;
+    Node<T>* previous;
 };
 
 template <typename T>
@@ -24,12 +25,27 @@ public:
 
     void push(T element)
     {
+        Node<T>* node = new Node<T>(element);       //Allocate memory and create node
 
+        node->previous = top;       //Point new node previous to current top of the stack - add to chain
+
+        top = node;                 //Point top to new node
+
+        _length++;                  //Increment length
     }
 
     void pop()
     {
+        if (!isEmpty())             //Check if stack is not emty
+        {
+            Node<T>* node = top;        //Remember current top
 
+            top = node->previous;       //Set top to previous one
+
+            delete node;                //Dealloc space for previous node
+
+            _length--;                  //Decrease lenght
+        }
     }
 
     T getTop()         //Returns top value of the stack
@@ -38,7 +54,7 @@ public:
         {
             return top->value;
         }
-        return NULL;
+        return (T)NULL;
     }
 
     bool isEmpty()
