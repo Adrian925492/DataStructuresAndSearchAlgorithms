@@ -34,7 +34,6 @@ TEST(ForwardListTest, GetElementTest)
     EXPECT_EQ(oList.get(1), 'B');
     EXPECT_EQ(oList.get(2), 'C');
     EXPECT_EQ(oList.get(3), 'D');
-
 }
 
 TEST(ForwardListTest, SearchingElementInList)
@@ -48,7 +47,7 @@ TEST(ForwardListTest, SearchingElementInList)
     oList.insert('C', 2);
     oList.insert('D', 3);
 
-    /*THEN */
+    /* THEN */
     EXPECT_EQ(oList.search('A'), 0u);
     EXPECT_EQ(oList.search('D'), 3u);    
 }
@@ -65,7 +64,7 @@ TEST(ForwardListTest, RemoveHeadElementTest)
     oList.insert('D', 3); 
     oList.removeHead();
 
-    /*THEN */
+    /* THEN */
     EXPECT_EQ(oList.search('A'), NULL);
     EXPECT_EQ(oList.search('C'), 1u);      
     EXPECT_EQ(oList.search('D'), 2u);     
@@ -83,7 +82,7 @@ TEST(ForwardListTest, RemoveTailElementTest)
     oList.insert('D', 3); 
     oList.removeTail();
 
-    /*THEN */
+    /* THEN */
     EXPECT_EQ(oList.search('A'), 0u);
     EXPECT_EQ(oList.search('B'), 1u);      
     EXPECT_EQ(oList.search('D'), NULL);     
@@ -101,7 +100,7 @@ TEST(ForwardListTest, RemoveElementTest)
     oList.insert('D', 3); 
     oList.remove(1);
 
-    /*THEN */
+    /* THEN */
     EXPECT_EQ(oList.search('A'), 0u);
     EXPECT_EQ(oList.search('C'), 1u);      
     EXPECT_EQ(oList.search('D'), 2u);     
