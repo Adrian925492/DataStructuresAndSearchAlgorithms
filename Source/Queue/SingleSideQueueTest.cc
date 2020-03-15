@@ -30,3 +30,18 @@ TEST(SingleSideQueueTest, EnqueueTest)
     EXPECT_FALSE(oQueue.isEmpty());
     EXPECT_EQ(oQueue.front(), 1u);
 }
+
+TEST(SingleSideQueueTest, DequeueTest)
+{
+    /* GIVEN */
+    Queue<uint16_t> oQueue;
+
+    /* WHEN */
+    oQueue.enqueue(1u);
+    oQueue.enqueue(2u);
+    oQueue.dequeue();
+
+    /* THEN */
+    EXPECT_FALSE(oQueue.isEmpty());
+    EXPECT_EQ(oQueue.front(), 2u);
+}
