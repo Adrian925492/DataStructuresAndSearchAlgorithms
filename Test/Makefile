@@ -25,6 +25,14 @@ Source/List/ListTest.cc \
 Source/Stack/StackTest.cc \
 Source/Queue/SingleSideQueueTest.cc \
 Source/Queue/DoubleSideQueueTest.cc \
+Source/BoubleSorting/BoubleSortingTest.cc \
+Source/CountingSort/CountingSortTest.cc \
+Source/FastSort/FastSortTest.cc \
+Source/PositioningSort/PositioningSortTest.cc \
+Source/SortByChoose/SortByChooseTest.cc \
+Source/SortByInsert/SortByInsertTest.cc \
+Source/SortByMerge/SortByMergeTest.cc \
+
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -37,7 +45,10 @@ OBJECTS = \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cpp=.o)))) \
 $(addprefix $(OBJ_DIR)/, $(notdir $(filter %.o, $(SRC:.cc=.o))))
 
-vpath %.cc Source/List Source/Stack Source/Queue Source $(GTEST_DIR) $(GMOCK_DIR)
+vpath %.cc Source/List Source/Stack Source/Queue  Source/BoubleSorting \
+Source/CountingSort Source/FastSort Source/PositioningSort Source/SortByChoose \
+Source/SortByInsert Source/SortByMerge \
+Source $(GTEST_DIR) $(GMOCK_DIR)
 
 all: $(OUTPUT_DIR) $(NAME)
 	@echo $(OBJECTS)
