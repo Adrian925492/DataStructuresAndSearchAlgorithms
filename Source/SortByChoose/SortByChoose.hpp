@@ -20,7 +20,6 @@ and continue steps 1-3 on unsorted part of array, untill whole array will be sor
 
 */
 
-
 namespace sortByChoose{
 
 template <typename T>
