@@ -3,6 +3,8 @@
 
 #include "FastSort.hpp"
 
+using namespace fastSort;
+
 TEST(FastSortingTest, InitTest)
 {
     

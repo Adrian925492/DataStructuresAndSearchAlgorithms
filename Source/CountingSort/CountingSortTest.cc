@@ -3,6 +3,8 @@
 
 #include "CountingSort.hpp"
 
+using namespace countingSort;
+
 TEST(CountingSortingTest, InitTest)
 {
     

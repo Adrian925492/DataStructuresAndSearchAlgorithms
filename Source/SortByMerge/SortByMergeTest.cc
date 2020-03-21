@@ -3,6 +3,8 @@
 
 #include "SortByMerge.hpp"
 
+using namespace sortByMerge;
+
 TEST(SortByMergeTest, InitTest)
 {
     

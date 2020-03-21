@@ -3,6 +3,8 @@
 
 #include "BoubleSorting.hpp"
 
+using namespace boubleSort;
+
 TEST(BoubleSortingTest, InitTest)
 {
     

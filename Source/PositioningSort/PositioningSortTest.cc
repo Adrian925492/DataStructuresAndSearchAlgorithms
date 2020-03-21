@@ -3,6 +3,8 @@
 
 #include "PositioningSort.hpp"
 
+using namespace positioningSort;
+
 TEST(PositioningSortingTest, InitTest)
 {
     

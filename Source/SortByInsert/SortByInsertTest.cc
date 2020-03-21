@@ -3,6 +3,8 @@
 
 #include "SortByInsert.hpp"
 
+using namespace sortByInsert;
+
 TEST(SortByInsertTest, InitTest)
 {
     
