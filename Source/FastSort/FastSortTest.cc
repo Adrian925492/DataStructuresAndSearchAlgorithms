@@ -6,7 +6,7 @@
 
 using namespace fastSort;
 
-TEST(FastSortingTest, ArraySortTest)
+TEST(SortTest, fastSortTest)
 {
     int array[5] = {3,4,6,2,1};
     int expectedSortedArray[5] = {1,2,3,4,6};

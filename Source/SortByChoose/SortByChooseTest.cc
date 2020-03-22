@@ -6,7 +6,7 @@
 
 using namespace sortByChoose;
 
-TEST(SortByChooseTest, ArraySortTest)
+TEST(SortTest, sortByChooseTest)
 {
     int array[5] = {3,4,6,2,1};
     int expectedSortedArray[5] = {1,2,3,4,6};
