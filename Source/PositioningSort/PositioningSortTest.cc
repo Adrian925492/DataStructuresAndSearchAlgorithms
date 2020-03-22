@@ -8,8 +8,8 @@ using namespace positioningSort;
 
 TEST(PositioningSortingTest, ArraySortTest)
 {
-    int array[5] = {3,4,6,2,1};
-    int expectedSortedArray[5] = {1,2,3,4,6};
+    int array[5] = {321,421,6123,2,1};
+    int expectedSortedArray[5] = {1,2,321,421,6123};
 
     Sort<int>(array, 5);
 
