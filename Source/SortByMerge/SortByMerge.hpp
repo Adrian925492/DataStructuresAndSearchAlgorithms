@@ -15,6 +15,7 @@ elements has to be reordered if needed, but merigng large subarrays they are alr
 
 //Step1:
 
+
 Divide array into subarrays if it is possible.
 
 //Step2:
