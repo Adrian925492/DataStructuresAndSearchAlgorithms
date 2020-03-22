@@ -77,7 +77,10 @@ public:
 
         _front = _front->previous;  //Move current front one backward
 
-        _front->next = nullptr;     //Set current front next to nullptr
+        if (_front != nullptr)
+        {
+            _front->next = nullptr;     //Set current front next to nullptr
+        }
 
         delete node;            //Dealloc memory for last front
 
@@ -95,7 +98,10 @@ public:
 
         _back = _back->next;  //Move current front one backward
 
-        _back->previous = nullptr;  //Set current back previous to nullptr
+        if (_back != nullptr)
+        {
+            _back->previous = nullptr;  //Set current back previous to nullptr
+        }
 
         delete node;            //Dealloc memory for last back
 
