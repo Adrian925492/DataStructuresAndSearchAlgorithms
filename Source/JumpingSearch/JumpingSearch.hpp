@@ -27,7 +27,7 @@ int Search(T array[], int startIdx, int endIdx, T value)
 
     int blockIdx = startIdx;               //Start compare from index equal to end
 
-    while(blockIdx <= endIdx && array[blockIdx] <= value)
+    while(blockIdx < arrayLength && array[blockIdx] <= value)
     {
         blockIdx += step;   //Decrement block index by block step as long as index value is less than searched value     
     }
