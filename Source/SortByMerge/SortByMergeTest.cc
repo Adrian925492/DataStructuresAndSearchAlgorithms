@@ -6,7 +6,7 @@
 
 using namespace sortByMerge;
 
-TEST(SortByMergeTest, ArraySortTest)
+TEST(SortTest, sortByMergeTest)
 {
     int array[5] = {3,4,6,2,1};
     int expectedSortedArray[5] = {1,2,3,4,6};

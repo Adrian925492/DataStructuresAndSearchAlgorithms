@@ -6,7 +6,7 @@
 
 using namespace sortByInsert;
 
-TEST(SortByInsertTest, ArraySortTest)
+TEST(SortTest, sortByInsertTest)
 {
     int array[5] = {3,4,6,2,1};
     int expectedSortedArray[5] = {1,2,3,4,6};

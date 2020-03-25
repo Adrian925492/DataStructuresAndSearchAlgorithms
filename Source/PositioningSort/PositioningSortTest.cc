@@ -6,7 +6,7 @@
 
 using namespace positioningSort;
 
-TEST(PositioningSortingTest, ArraySortTest)
+TEST(SortTest, positioningTest)
 {
     int array[5] = {321,421,6123,2,1};
     int expectedSortedArray[5] = {1,2,321,421,6123};
