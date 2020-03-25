@@ -9,5 +9,5 @@ TEST(StringAlgorithms, AnagramCheckTest)
     std::string oString1 = "Arbuz";
     std::string oString2 = "Burza"; 
 
-    EXPECT_TRUE(CheckAnagram(&oString1, &oString2));
+    EXPECT_TRUE(CheckAnagram(oString1, oString2));
 }
