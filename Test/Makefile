@@ -39,6 +39,7 @@ Source/InterpolativeSearch/InterpolativeSearchTest.cc \
 Source/JumpingSearch/JumpingSearchTest.cc \
 Source/ExpotentialSearch/ExpotentialSearchTest.cc \
 Source/SublistSearch/SublistSearchTest.cc \
+Source/AnagramCheck/AnagramCheckTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -55,7 +56,7 @@ vpath %.cc Source/List Source/Stack Source/Queue  Source/BoubleSorting \
 Source/CountingSort Source/FastSort Source/PositioningSort Source/SortByChoose \
 Source/SortByInsert Source/SortByMerge Source/LineSearch Source/BinarySearch \
 Source/TetrarySearch Source/InterpolativeSearch Source/JumpingSearch \
-Source/ExpotentialSearch Source/SublistSearch \
+Source/ExpotentialSearch Source/SublistSearch Source/AnagramCheck \
 Source $(GTEST_DIR) $(GMOCK_DIR)
 
 all: $(OUTPUT_DIR) $(NAME)
