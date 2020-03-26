@@ -41,6 +41,7 @@ Source/ExpotentialSearch/ExpotentialSearchTest.cc \
 Source/SublistSearch/SublistSearchTest.cc \
 Source/AnagramCheck/AnagramCheckTest.cc \
 Source/PalindromeCheck/PalindromeCheckTest.cc \
+Source/DecimalBinaryConversion/DecimalBinaryConversionTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -58,6 +59,7 @@ Source/CountingSort Source/FastSort Source/PositioningSort Source/SortByChoose \
 Source/SortByInsert Source/SortByMerge Source/LineSearch Source/BinarySearch \
 Source/TetrarySearch Source/InterpolativeSearch Source/JumpingSearch \
 Source/ExpotentialSearch Source/SublistSearch Source/AnagramCheck Source/PalindromeCheck \
+Source/DecimalBinaryConversion \
 Source $(GTEST_DIR) $(GMOCK_DIR)
 
 all: $(OUTPUT_DIR) $(NAME)
