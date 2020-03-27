@@ -2,6 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "BST.hpp"
+#include <vector>
 
 using namespace bst;
 
@@ -39,6 +40,34 @@ TEST(BST, BST_insertTest)
     EXPECT_EQ(oBst->root->rightChild->key, 3u);
     EXPECT_EQ(oBst->root->rightChild->rightChild->key, 4u);
     EXPECT_EQ(oBst->root->leftChild->key, 1u);
+}
+
+TEST(BST, BST_getAllElementsTest)
+{
+    /* GIVEN */
+    Node* oBst = new Node;
+    std::vector<int> output;
+
+    /* WHEN */
+    /* Create tree:
+        2
+      /   \
+     1     3
+            \
+             4
+    */
+
+    oBst->Insert(2);
+    oBst->Insert(3);
+    oBst->Insert(1);
+    oBst->Insert(4);
+    oBst->GetAllEements(&output);
+
+    /* THEN */
+    EXPECT_EQ(output[0], 1u);
+    EXPECT_EQ(output[1], 2u);
+    EXPECT_EQ(output[2], 3u);
+    EXPECT_EQ(output[3], 4u);
 }
 
 TEST(BST, BST_searchTest)

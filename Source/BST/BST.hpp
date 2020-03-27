@@ -1,3 +1,4 @@
+#include <vector>
 
 namespace bst{
 
@@ -39,6 +40,26 @@ public:
     Node* Insert(int value)     //Overload the function - for comfort use
     {
         root = Insert(root, value);
+    }
+
+    /* Get all elements (min to max) */
+    void GetAllEements(Node* node, std::vector<int>* output)
+    {
+        if (node == nullptr)
+        {
+            return;     //No more nodes to present so return
+        }
+
+        GetAllEements(node->leftChild, output);     //Firsty get element from left child
+
+        output->push_back(node->key);               //Than attach current key
+
+        GetAllEements(node->rightChild, output);    //Get elements from right child
+    }
+
+    void GetAllEements(std::vector<int>* output)
+    {
+        GetAllEements(root, output);
     }
 
     /* Search for value in BST */
