@@ -40,6 +40,33 @@ public:
     {
         root = Insert(root, value);
     }
+
+    bool Search(Node* node, int value)
+    {
+        if (node == nullptr)
+        {
+            return false;   //Return false, element not found
+        }
+
+        else if (node->key == value)
+        {
+            return true;    //Return true - element found
+        }
+
+        else if (node->key < value)
+        {
+            Search(node->rightChild, value);    //Binary search - if value is grater than key, look for it in right subarray
+        }
+        else if(node->key > value)
+        {
+            Search(node->leftChild, value);     //Bianry search - of value is less than key, search it in left subarray
+        }
+    }
+
+    bool Search(int value)
+    {
+        return Search(root, value);
+    }
 };
 
 }
