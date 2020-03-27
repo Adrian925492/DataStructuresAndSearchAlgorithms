@@ -192,3 +192,29 @@ TEST(BST, BST_searchPredeccessorTest)
     EXPECT_EQ(oBst->Predeccesor(oBst->root->rightChild), 2);
     EXPECT_EQ(oBst->Predeccesor(oBst->root->leftChild), -1);
 }
+
+TEST(BST, BST_removeNodeTest)
+{
+    /* GIVEN */
+    Node* oBst = new Node;
+    
+    /* WHEN */
+    /* Create tree:
+        2
+      /   \
+     1     3
+            \
+             4
+    */
+
+    oBst->Insert(2);
+    oBst->Insert(3);
+    oBst->Insert(1);
+    oBst->Insert(4);
+    oBst->Remove(3);
+
+    /* THEN */
+    EXPECT_EQ(oBst->root->key, 2u);
+    EXPECT_EQ(oBst->root->rightChild->key,4u);
+    EXPECT_EQ(oBst->root->leftChild->key, 1u);
+}

@@ -186,6 +186,55 @@ public:
             parentNode->key;        //Node has parent - its parent value is successor   
         }              
     }
+
+    /* Remove node */
+    Node* Remove(Node* node, int value)
+    {
+        if (node == nullptr)
+        {
+            return nullptr;
+        }
+
+        if (node->key == value)
+        {
+            if (node->rightChild == nullptr && node->leftChild == nullptr)
+            {
+                node = nullptr;        //Case 1: node is leaf
+            }
+            else if (node->leftChild == nullptr && node->rightChild != nullptr)
+            {
+                node->parent->rightChild = node->rightChild;
+                node = node->rightChild;
+            }
+            else if (node->leftChild != nullptr && node->rightChild == nullptr)
+            {
+                node->parent->leftChild = node->leftChild;
+                node = node->leftChild;
+            }
+            else
+            {
+                int succesorKey = Successor(node);
+
+                node->key = succesorKey;
+
+                node->rightChild = Remove(node->rightChild, succesorKey);
+            }
+        }
+        else if (node->key < value)
+        {
+            node->rightChild = Remove(node->rightChild, value);     //Look for key in right subtree
+        }
+        else if (node->key > value)
+        {
+            node->leftChild = Remove(node->leftChild, value);     //Look for key in right subtree
+        }
+        return node;
+    }
+
+    void Remove(int value)
+    {
+        root = Remove(root, value);
+    }
 };
 
 }
