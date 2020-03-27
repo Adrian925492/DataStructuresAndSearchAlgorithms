@@ -142,3 +142,53 @@ TEST(BST, BST_searchMinimumTest)
     /* THEN */
     EXPECT_EQ(oBst->SearchMinValue(), 1u);
 }
+
+TEST(BST, BST_searchSuccessorTest)
+{
+    /* GIVEN */
+    Node* oBst = new Node;
+    
+    /* WHEN */
+    /* Create tree:
+        2
+      /   \
+     1     3
+            \
+             4
+    */
+
+    oBst->Insert(2);
+    oBst->Insert(3);
+    oBst->Insert(1);
+    oBst->Insert(4);
+
+    /* THEN */
+    EXPECT_EQ(oBst->Successor(oBst->root), 3);
+    EXPECT_EQ(oBst->Successor(oBst->root->leftChild), 2);
+    EXPECT_EQ(oBst->Successor(oBst->root->rightChild->rightChild), -1);
+}
+
+TEST(BST, BST_searchPredeccessorTest)
+{
+    /* GIVEN */
+    Node* oBst = new Node;
+    
+    /* WHEN */
+    /* Create tree:
+        2
+      /   \
+     1     3
+            \
+             4
+    */
+
+    oBst->Insert(2);
+    oBst->Insert(3);
+    oBst->Insert(1);
+    oBst->Insert(4);
+
+    /* THEN */
+    EXPECT_EQ(oBst->Predeccesor(oBst->root), 1);
+    EXPECT_EQ(oBst->Predeccesor(oBst->root->rightChild), 2);
+    EXPECT_EQ(oBst->Predeccesor(oBst->root->leftChild), -1);
+}

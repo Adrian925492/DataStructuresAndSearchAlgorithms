@@ -138,6 +138,54 @@ public:
     {
         return SearchMaxValue(root);
     }
+
+    /* Find successor */
+    int Successor(Node* node)
+    {
+        if (node->rightChild != nullptr)
+        {
+            return SearchMinValue(node->rightChild);    //Successor is minimum value of its right subtree (CASE 1)
+        }
+        else
+        {
+            Node* parentNode = node->parent;
+            Node* currentNode = node;
+
+            while((parentNode != nullptr) && (currentNode == parentNode->rightChild))   //Untill node has parent and is right child
+            {
+                currentNode = parentNode;
+                parentNode = currentNode->parent;
+            }
+
+            return parentNode == nullptr ?
+            -1 :                    //Node is maximum value in tree (right node), so has no successor (CASE 3)
+            parentNode->key;        //Node has parent - its parent value is successor   
+        }      
+    }
+    
+    /* Find predeccessor */
+    int Predeccesor(Node* node)
+    {
+        if (node->leftChild != nullptr)
+        {
+            return SearchMaxValue(node->leftChild);    //Predeccessor is maximum value of its left subtree (CASE 1)
+        }
+        else
+        {
+            Node* parentNode = node->parent;
+            Node* currentNode = node;
+
+            while((parentNode != nullptr) && (currentNode == parentNode->leftChild))   //Untill node has parent and is left child
+            {
+                currentNode = parentNode;
+                parentNode = currentNode->parent;
+            }
+
+            return parentNode == nullptr ?
+            -1 :                    //Node is maximum value in tree (right node), so has no successor (CASE 3)
+            parentNode->key;        //Node has parent - its parent value is successor   
+        }              
+    }
 };
 
 }
