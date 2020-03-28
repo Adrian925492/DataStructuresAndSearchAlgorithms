@@ -10,8 +10,9 @@ public:
     Node* rightChild;
     Node* parent;
     int key;
+    int height;     //Node height
 
-    Node(): root(nullptr), leftChild(nullptr), rightChild(nullptr), parent(nullptr), key(0) {}
+    Node(): root(nullptr), leftChild(nullptr), rightChild(nullptr), parent(nullptr), key(0), height(0) {}
 
     Node* Insert(Node* node, int value)
     {
@@ -37,7 +38,7 @@ public:
         return node;
     }
 
-    Node* Insert(int value)     //Overload the function - for comfort use
+    void Insert(int value)     //Overload the function - for comfort use
     {
         root = Insert(root, value);
     }
