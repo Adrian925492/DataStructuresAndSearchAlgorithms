@@ -65,7 +65,7 @@ TEST(ForwardListTest, RemoveHeadElementTest)
     oList.removeHead();
 
     /* THEN */
-    EXPECT_EQ(oList.search('A'), NULL);
+    EXPECT_EQ(oList.search('A'), (unsigned char)NULL);
     EXPECT_EQ(oList.search('C'), 1u);      
     EXPECT_EQ(oList.search('D'), 2u);     
 }
@@ -85,7 +85,7 @@ TEST(ForwardListTest, RemoveTailElementTest)
     /* THEN */
     EXPECT_EQ(oList.search('A'), 0u);
     EXPECT_EQ(oList.search('B'), 1u);      
-    EXPECT_EQ(oList.search('D'), NULL);     
+    EXPECT_EQ(oList.search('D'), (unsigned char)NULL);     
 }
 
 TEST(ForwardListTest, RemoveElementTest)

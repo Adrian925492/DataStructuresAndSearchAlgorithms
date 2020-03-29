@@ -1,0 +1,242 @@
+#include <vector>
+
+namespace bst{
+
+class Node
+{
+public:
+    Node* root;
+    Node* leftChild;
+    Node* rightChild;
+    Node* parent;
+    int key;
+    int height;     //Node height
+
+    Node(): root(nullptr), leftChild(nullptr), rightChild(nullptr), parent(nullptr), key(0), height(0) {}
+
+    Node* Insert(Node* node, int value)
+    {
+        if (node == nullptr)       //If node has no child - add node
+        {
+            node = new Node;
+            node->leftChild = nullptr;
+            node->rightChild = nullptr;
+            node->parent = nullptr;
+            node->key = value;
+        }
+        else if (node->key < value)   //If key is less than our key - go to left subtree
+        {
+            node->rightChild = Insert(node->rightChild, value);  //Call insert recursively - left subtree
+            node->rightChild->parent = node;
+        }
+        else //Key is grater than our key - go to right subtree
+        {
+            node->leftChild = Insert(node->leftChild, value);  //Call insert recursively - right subtree
+            node->leftChild->parent = node;
+        }
+
+        return node;
+    }
+
+    void Insert(int value)     //Overload the function - for comfort use
+    {
+        root = Insert(root, value);
+    }
+
+    /* Get all elements (min to max) */
+    void GetAllEements(Node* node, std::vector<int>* output)
+    {
+        if (node == nullptr)
+        {
+            return;     //No more nodes to present so return
+        }
+
+        GetAllEements(node->leftChild, output);     //Firsty get element from left child
+
+        output->push_back(node->key);               //Than attach current key
+
+        GetAllEements(node->rightChild, output);    //Get elements from right child
+    }
+
+    void GetAllEements(std::vector<int>* output)
+    {
+        GetAllEements(root, output);
+    }
+
+    /* Search for value in BST */
+    Node* Search(Node* node, int value)
+    {
+        if (node == nullptr)
+        {
+            return nullptr;   //Return false, element not found
+        }
+
+        else if (node->key == value)
+        {
+            return node;    //Return true - element found
+        }
+
+        else if (node->key < value)
+        {
+            return Search(node->rightChild, value);    //Binary search - if value is grater than key, look for it in right subarray
+        }
+        else if(node->key > value)
+        {
+            return Search(node->leftChild, value);     //Bianry search - of value is less than key, search it in left subarray
+        }
+        return nullptr;
+    }
+
+    bool Search(int value)
+    {
+        if(Search(root, value) != nullptr)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //Look for min value in tree
+    int SearchMinValue(Node* node)
+    {
+        if (node == nullptr)
+        {
+            return -1;      //Tree is empty, so return -1
+        }  
+
+        if (node->leftChild != nullptr)
+        {
+            return SearchMinValue(node->leftChild);     //Have some left child - search in it
+        }
+        else
+        {
+            return node->key;           //No more left child - here we have min value!
+        }    
+    }
+
+    int SearchMinValue(void)
+    {
+        return SearchMinValue(root);
+    }
+
+    //Look for max value in tree
+    int SearchMaxValue(Node* node)
+    {
+        if (node == nullptr)
+        {
+            return -1;      //Tree is empty, so return -1
+        }
+        if (node->rightChild != nullptr)
+        {
+            return SearchMaxValue(node->rightChild);     //Have some right child - search in it
+        }
+        else
+        {
+            return node->key;           //No more right child - here we have min value!
+        }
+    }
+
+    int SearchMaxValue(void)
+    {
+        return SearchMaxValue(root);
+    }
+
+    /* Find successor */
+    int Successor(Node* node)
+    {
+        if (node->rightChild != nullptr)
+        {
+            return SearchMinValue(node->rightChild);    //Successor is minimum value of its right subtree (CASE 1)
+        }
+        else
+        {
+            Node* parentNode = node->parent;
+            Node* currentNode = node;
+
+            while((parentNode != nullptr) && (currentNode == parentNode->rightChild))   //Untill node has parent and is right child
+            {
+                currentNode = parentNode;
+                parentNode = currentNode->parent;
+            }
+
+            return parentNode == nullptr ?
+            -1 :                    //Node is maximum value in tree (right node), so has no successor (CASE 3)
+            parentNode->key;        //Node has parent - its parent value is successor   
+        }      
+    }
+    
+    /* Find predeccessor */
+    int Predeccesor(Node* node)
+    {
+        if (node->leftChild != nullptr)
+        {
+            return SearchMaxValue(node->leftChild);    //Predeccessor is maximum value of its left subtree (CASE 1)
+        }
+        else
+        {
+            Node* parentNode = node->parent;
+            Node* currentNode = node;
+
+            while((parentNode != nullptr) && (currentNode == parentNode->leftChild))   //Untill node has parent and is left child
+            {
+                currentNode = parentNode;
+                parentNode = currentNode->parent;
+            }
+
+            return parentNode == nullptr ?
+            -1 :                    //Node is maximum value in tree (right node), so has no successor (CASE 3)
+            parentNode->key;        //Node has parent - its parent value is successor   
+        }              
+    }
+
+    /* Remove node */
+    Node* Remove(Node* node, int value)
+    {
+        if (node == nullptr)
+        {
+            return nullptr;
+        }
+
+        if (node->key == value)
+        {
+            if (node->rightChild == nullptr && node->leftChild == nullptr)
+            {
+                node = nullptr;        //Case 1: node is leaf
+            }
+            else if (node->leftChild == nullptr && node->rightChild != nullptr)
+            {
+                node->parent->rightChild = node->rightChild;
+                node = node->rightChild;
+            }
+            else if (node->leftChild != nullptr && node->rightChild == nullptr)
+            {
+                node->parent->leftChild = node->leftChild;
+                node = node->leftChild;
+            }
+            else
+            {
+                int succesorKey = Successor(node);
+
+                node->key = succesorKey;
+
+                node->rightChild = Remove(node->rightChild, succesorKey);
+            }
+        }
+        else if (node->key < value)
+        {
+            node->rightChild = Remove(node->rightChild, value);     //Look for key in right subtree
+        }
+        else if (node->key > value)
+        {
+            node->leftChild = Remove(node->leftChild, value);     //Look for key in right subtree
+        }
+        return node;
+    }
+
+    void Remove(int value)
+    {
+        root = Remove(root, value);
+    }
+};
+
+}

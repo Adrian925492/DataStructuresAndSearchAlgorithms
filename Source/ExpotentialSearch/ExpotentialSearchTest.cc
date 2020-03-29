@@ -7,8 +7,12 @@ using namespace expotentialSearch;
 
 TEST(SearchTest, expotentialSearchTest)
 {
+    /* GIVEN */
     int inputArray[5] = {1,2,5,6,8};
 
+    /* WHEN */
+
+    /* THEN */
     EXPECT_EQ(Search<int>(inputArray, 0, 4, 1), 0);
     EXPECT_EQ(Search<int>(inputArray, 0, 4, 2), 1);
     EXPECT_EQ(Search<int>(inputArray, 0, 4, 5), 2);

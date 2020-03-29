@@ -39,6 +39,14 @@ Source/InterpolativeSearch/InterpolativeSearchTest.cc \
 Source/JumpingSearch/JumpingSearchTest.cc \
 Source/ExpotentialSearch/ExpotentialSearchTest.cc \
 Source/SublistSearch/SublistSearchTest.cc \
+Source/AnagramCheck/AnagramCheckTest.cc \
+Source/PalindromeCheck/PalindromeCheckTest.cc \
+Source/DecimalBinaryConversion/DecimalBinaryConversionTest.cc \
+Source/SearchingPattern/SearchingPatternTest.cc \
+Source/BST/BSTTest.cc \
+Source/AVL/AVLTest.cc \
+Source/BinaryHeap/BinaryHeapTest.cc \
+Source/HashTable/HashTableTest.cc \
 
 NAME = DataStructuresAndAlgorithms_UT
 
@@ -55,7 +63,8 @@ vpath %.cc Source/List Source/Stack Source/Queue  Source/BoubleSorting \
 Source/CountingSort Source/FastSort Source/PositioningSort Source/SortByChoose \
 Source/SortByInsert Source/SortByMerge Source/LineSearch Source/BinarySearch \
 Source/TetrarySearch Source/InterpolativeSearch Source/JumpingSearch \
-Source/ExpotentialSearch Source/SublistSearch \
+Source/ExpotentialSearch Source/SublistSearch Source/AnagramCheck Source/PalindromeCheck \
+Source/DecimalBinaryConversion Source/SearchingPattern Source/BST Source/AVL Source/BinaryHeap Source/HashTable\
 Source $(GTEST_DIR) $(GMOCK_DIR)
 
 all: $(OUTPUT_DIR) $(NAME)

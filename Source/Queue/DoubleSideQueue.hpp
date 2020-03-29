@@ -112,7 +112,7 @@ public:
     {
         if (isEmpty())
         {
-            return NULL;        //Check if queue is empty
+            return (T)NULL;        //Check if queue is empty
         }
         return _back->value;   //Return value
     }
@@ -121,7 +121,7 @@ public:
     {
         if (isEmpty())
         {
-            return NULL;        //Check if queue is empty
+            return (T)NULL;        //Check if queue is empty
         }
         return _front->value;   //Return value
     }

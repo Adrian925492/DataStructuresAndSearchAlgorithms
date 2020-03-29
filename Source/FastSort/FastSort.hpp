@@ -16,10 +16,9 @@ last element of left subarray with pivot element. Now, all elements less than pi
 on right side (right subarray). If the list is not sorted, we call recursively partitioning algorithm on both - left and right subarrays, but wo. pivot element
 The recursive call will end when the subarray called to partitioning will have length of 1 - means canot be partitioned any more.
 
-
-/*
 The function partitions the array defined by startIndex up to endIndex
 */
+
 template <typename T>
 int Partition(T array[], int startIndex, int endIndex)
 {

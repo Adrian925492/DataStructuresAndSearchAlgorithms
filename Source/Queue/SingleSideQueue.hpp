@@ -62,7 +62,7 @@ public:
     {
         if (isEmpty())
         {
-            return NULL;    //Return NULL if queue is empty
+            return (T)NULL;    //Return NULL if queue is empty
         }
         return _front->value;   //Return front node value
     }
