@@ -9,7 +9,7 @@ TEST(AVL, AVL_initTest)
 {
     Node* oAVL = new Node;
 
-    EXPECT_EQ(oAVL->key, 0u);
+    EXPECT_EQ(oAVL->key, 0);
     EXPECT_EQ(oAVL->leftChild, nullptr);
     EXPECT_EQ(oAVL->parent, nullptr);
     EXPECT_EQ(oAVL->rightChild, nullptr);
@@ -35,10 +35,10 @@ TEST(AVL, AVL_insertTest)
     oAVL->Insert(4);
 
     /* THEN */
-    //EXPECT_EQ(oAVL->root->key, 2u);
-    //EXPECT_EQ(oAVL->root->rightChild->key, 3u);
-    //EXPECT_EQ(oAVL->root->rightChild->rightChild->key, 4u);
-    //EXPECT_EQ(oAVL->root->leftChild->key, 1u);
+    EXPECT_EQ(oAVL->root->key, 2);
+    EXPECT_EQ(oAVL->root->rightChild->key, 3);
+    EXPECT_EQ(oAVL->root->rightChild->rightChild->key, 4);
+    EXPECT_EQ(oAVL->root->leftChild->key, 1);
 }
 
 TEST(AVL, AVL_getAllElementsTest)
@@ -63,10 +63,10 @@ TEST(AVL, AVL_getAllElementsTest)
     oAVL->GetAllEements(&output);
 
     /* THEN */
-    EXPECT_EQ(output[0], 1u);
-    EXPECT_EQ(output[1], 2u);
-    EXPECT_EQ(output[2], 3u);
-    EXPECT_EQ(output[3], 4u);
+    EXPECT_EQ(output[0], 1);
+    EXPECT_EQ(output[1], 2);
+    EXPECT_EQ(output[2], 3);
+    EXPECT_EQ(output[3], 4);
 }
 
 TEST(AVL, AVL_searchTest)
@@ -116,7 +116,7 @@ TEST(AVL, AVL_searchMaximumTest)
     oAVL->Insert(4);
 
     /* THEN */
-    EXPECT_EQ(oAVL->SearchMaxValue(), 4u);
+    EXPECT_EQ(oAVL->SearchMaxValue(), 4);
 }
 
 TEST(AVL, AVL_searchMinimumTest)
@@ -139,7 +139,7 @@ TEST(AVL, AVL_searchMinimumTest)
     oAVL->Insert(4);
 
     /* THEN */
-    EXPECT_EQ(oAVL->SearchMinValue(), 1u);
+    EXPECT_EQ(oAVL->SearchMinValue(), 1);
 }
 
 TEST(AVL, AVL_searchSuccessorTest)
@@ -213,7 +213,7 @@ TEST(AVL, AVL_removeNodeTest)
     oAVL->Remove(1);
 
     /* THEN */
-    EXPECT_EQ(oAVL->root->key, 3u);
-    EXPECT_EQ(oAVL->root->rightChild->key,4u);
-    EXPECT_EQ(oAVL->root->leftChild->key, 2u);
+    EXPECT_EQ(oAVL->root->key, 3);
+    EXPECT_EQ(oAVL->root->rightChild->key,4);
+    EXPECT_EQ(oAVL->root->leftChild->key, 2);
 }

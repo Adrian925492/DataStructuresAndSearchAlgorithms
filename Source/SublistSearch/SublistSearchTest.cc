@@ -9,6 +9,7 @@ using namespace sublistSearch;
 
 TEST(SearchTest, sublistSearchTest)
 {
+    /* GIVEN */
     list::List<int> oInputList;
     oInputList.insert(5, 0);
     oInputList.insert(6, 1);
@@ -22,5 +23,8 @@ TEST(SearchTest, sublistSearchTest)
     oLookedForList.insert(2, 1);
     oLookedForList.insert(3, 2);
 
+    /* WHEN */
+
+    /* THEN */
     EXPECT_TRUE(Search(oInputList.head, oLookedForList.head));
 }

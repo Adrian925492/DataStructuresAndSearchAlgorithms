@@ -8,9 +8,13 @@ using namespace bst;
 
 TEST(BST, BST_initTest)
 {
+    /* GIVEN */
     Node* oBst = new Node;
 
-    EXPECT_EQ(oBst->key, 0u);
+    /* WHEN */
+
+    /* THEN */
+    EXPECT_EQ(oBst->key, 0);
     EXPECT_EQ(oBst->leftChild, nullptr);
     EXPECT_EQ(oBst->parent, nullptr);
     EXPECT_EQ(oBst->rightChild, nullptr);
@@ -36,10 +40,10 @@ TEST(BST, BST_insertTest)
     oBst->Insert(4);
 
     /* THEN */
-    EXPECT_EQ(oBst->root->key, 2u);
-    EXPECT_EQ(oBst->root->rightChild->key, 3u);
-    EXPECT_EQ(oBst->root->rightChild->rightChild->key, 4u);
-    EXPECT_EQ(oBst->root->leftChild->key, 1u);
+    EXPECT_EQ(oBst->root->key, 2);
+    EXPECT_EQ(oBst->root->rightChild->key, 3);
+    EXPECT_EQ(oBst->root->rightChild->rightChild->key, 4);
+    EXPECT_EQ(oBst->root->leftChild->key, 1);
 }
 
 TEST(BST, BST_getAllElementsTest)
@@ -64,10 +68,10 @@ TEST(BST, BST_getAllElementsTest)
     oBst->GetAllEements(&output);
 
     /* THEN */
-    EXPECT_EQ(output[0], 1u);
-    EXPECT_EQ(output[1], 2u);
-    EXPECT_EQ(output[2], 3u);
-    EXPECT_EQ(output[3], 4u);
+    EXPECT_EQ(output[0], 1);
+    EXPECT_EQ(output[1], 2);
+    EXPECT_EQ(output[2], 3);
+    EXPECT_EQ(output[3], 4);
 }
 
 TEST(BST, BST_searchTest)
@@ -117,7 +121,7 @@ TEST(BST, BST_searchMaximumTest)
     oBst->Insert(4);
 
     /* THEN */
-    EXPECT_EQ(oBst->SearchMaxValue(), 4u);
+    EXPECT_EQ(oBst->SearchMaxValue(), 4);
 }
 
 TEST(BST, BST_searchMinimumTest)
@@ -140,7 +144,7 @@ TEST(BST, BST_searchMinimumTest)
     oBst->Insert(4);
 
     /* THEN */
-    EXPECT_EQ(oBst->SearchMinValue(), 1u);
+    EXPECT_EQ(oBst->SearchMinValue(), 1);
 }
 
 TEST(BST, BST_searchSuccessorTest)
@@ -214,7 +218,7 @@ TEST(BST, BST_removeNodeTest)
     oBst->Remove(3);
 
     /* THEN */
-    EXPECT_EQ(oBst->root->key, 2u);
-    EXPECT_EQ(oBst->root->rightChild->key,4u);
-    EXPECT_EQ(oBst->root->leftChild->key, 1u);
+    EXPECT_EQ(oBst->root->key, 2);
+    EXPECT_EQ(oBst->root->rightChild->key, 4);
+    EXPECT_EQ(oBst->root->leftChild->key, 1);
 }

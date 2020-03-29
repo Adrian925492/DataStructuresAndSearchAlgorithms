@@ -84,6 +84,7 @@ public:
         {
             return Search(node->leftChild, value);     //Bianry search - of value is less than key, search it in left subarray
         }
+        return nullptr;
     }
 
     bool Search(int value)
